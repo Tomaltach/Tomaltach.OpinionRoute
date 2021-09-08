@@ -1,0 +1,54 @@
+<div class="center">
+  <div>
+    <div class="logo">
+      <img src="https://assets.website-files.com/5dc0621d9bf13e971a5a0a82/5dc7618b11520ea6ece7cb16_LOGO_COLOR.svg"/>
+    </div>
+    <div>
+      <opro-form-textbox [setLabelValue]="'Address'" (childEvent)="getAddress($event)"></opro-form-textbox>
+      <opro-form-textbox [setLabelValue]="'City'" (childEvent)="getCity($event)"></opro-form-textbox>
+      <opro-form-textbox [setLabelValue]="'State'" (childEvent)="getState($event)"></opro-form-textbox>
+    </div>
+    <div class="button">
+      <div></div>
+      <button (click)="submit()">Click Me!</button>
+    </div>
+  </div>
+
+  <div *ngIf="addresses">
+    <hr />
+    <table>
+      <tr>
+        <td>ZipCode</td>
+        <td>{{zipCode}}</td>
+      </tr>
+      <tr>
+        <td>Local Time @ Location</td>
+        <td>{{localTime | date:'full':offset}}</td>
+      </tr>
+      <tr>
+        <td>Reverse Delivery Line 1</td>
+        <td>{{reverse}}</td>
+      </tr>
+      <tr>
+        <td>Time to Execute</td>
+        <td>{{timeToExecute}}ms</td>
+      </tr>
+      <tr>
+        <td>Latitude</td>
+        <td>{{latitude}}</td>
+      </tr>
+      <tr>
+        <td>Longitude</td>
+        <td>{{longitude}}</td>
+      </tr>
+      <tr>
+        <td>ZipCode between 1-50</td>
+        <td>{{zipCodeDivision}}</td>
+      </tr>
+      <tr>
+        <td>Distance</td>
+        <td>{{distance}}km</td>
+      </tr>
+    </table>
+  </div>
+</div>
