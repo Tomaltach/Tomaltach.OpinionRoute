@@ -20,6 +20,7 @@ export class AddressComponent implements OnInit {
   city: string;
   state: string;
 
+  hasData: boolean = true;
   addresses: IAddressReturnModel[];
   zipCode: string;
   localTime: Date;
@@ -54,6 +55,11 @@ export class AddressComponent implements OnInit {
   getState(event) { this.state = event; }
 
   async processData(): Promise<void> {
+    if (this.addresses.length <= 0) {
+      this.hasData = false;
+      return;
+    }
+    this.hasData = true;
     const address = this.addresses[0];
     this.zipCode = address.components.zipcode;
     this.localTime = new Date();

@@ -14,7 +14,10 @@
     </div>
   </div>
 
-  <div *ngIf="addresses">
+  <div *ngIf="!hasData">
+    <span>No Data Found!</span>
+  </div>
+  <div *ngIf="hasData && addresses">
     <hr />
     <table>
       <tr>

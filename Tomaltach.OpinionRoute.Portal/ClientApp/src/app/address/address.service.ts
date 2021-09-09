@@ -18,7 +18,8 @@ export class AddressService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(this.clientId + ':' + this.clientSecret)
+        'clientId': this.clientId,
+        'clientSecret': this.clientSecret
       })
     };
 
